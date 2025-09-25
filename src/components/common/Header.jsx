@@ -9,7 +9,8 @@ export default function Header() {
 
         <Link to="/" className="flex items-center space-x-2">
           <img src={logo} alt="RCS Logo" className="h-10 w-10 rounded-full" />
-          <span className="font-bold text-xl">RCS</span>
+          <span className="font-bold text-xl">RuenzCarlSmith (RCS)</span>
+
         </Link>
 
         <nav className="flex space-x-6 text-sm font-medium">
