@@ -31,7 +31,7 @@ export const CartProvider = ({ children }) => {
 export const useCart = () => useContext(CartContext);
 
 
-// ======================= src/services/api.js =======================
+
 const BASE_URL = 'https://dummyjson.com/products';
 
 

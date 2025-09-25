@@ -23,8 +23,7 @@ export default function Cart() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gray-50 p-6 flex flex-col md:flex-row gap-6">
-      {/* Left Section - Cart Items */}
+    <div className="w-full min-h-screen bg-gray-50 p-6 flex flex-col md:flex-row gap-6">  
       <div className="flex-1 bg-white shadow rounded-lg p-4">
         <h2 className="text-xl font-bold border-b pb-3 mb-4">Shopping Cart</h2>
         <div className="space-y-4">
@@ -33,7 +32,6 @@ export default function Cart() {
               key={item.id}
               className="flex items-center justify-between border-b pb-3"
             >
-              {/* Product info */}
               <div className="flex items-center gap-4">
                 <img
                   src={item.image || "/placeholder.png"}
@@ -45,8 +43,6 @@ export default function Cart() {
                   <p className="text-gray-500">₱{item.price.toFixed(2)}</p>
                 </div>
               </div>
-
-              {/* Qty Controls */}
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => updateQty(item.id, item.qty - 1)}
@@ -72,7 +68,6 @@ export default function Cart() {
                 </button>
               </div>
 
-              {/* Subtotal + Actions */}
               <div className="flex flex-col items-end">
                 <p className="font-semibold">
                   ₱{(item.price * item.qty).toFixed(2)}
@@ -89,7 +84,6 @@ export default function Cart() {
         </div>
       </div>
 
-      {/* Right Section - Order Summary */}
       <div className="w-full md:w-80 bg-white shadow rounded-lg p-4 h-fit">
         <h2 className="text-lg font-semibold border-b pb-2 mb-3">
           Order Summary
@@ -120,7 +114,6 @@ export default function Cart() {
           <span>₱{total.toFixed(2)}</span>
         </div>
 
-        {/* ✅ Navigate to Checkout */}
         <button
           onClick={() => navigate("/checkout")}
           className="w-full bg-gray-700 text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition"

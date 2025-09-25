@@ -6,14 +6,13 @@ export default function Header() {
   return (
     <header className="bg-gray-800 text-white w-100%">
       <div className="px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        {/* Logo */}
+
         <Link to="/" className="flex items-center space-x-2">
           <img src={logo} alt="RCS Logo" className="h-10 w-10 rounded-full" />
           <span className="font-bold text-xl">RuenzCarlSmith (RCS)</span>
 
         </Link>
 
-        {/* Navigation Links */}
         <nav className="flex space-x-6 text-sm font-medium">
           <Link to="/products" className="hover:text-gray-400 transition">
             Products

@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
-      {/* Video Background */}
+
       <video
         className="fixed top-0 left-0 w-full h-full object-cover -z-10"
         src="/sky.mp4" // public folder path
@@ -15,10 +15,9 @@ export default function Home() {
         muted
       />
 
-      {/* Overlay */}
+
       <div className="fixed top-0 left-0 w-full h-full bg-black/50 -z-10"></div>
 
-      {/* Background Music */}
       <audio autoPlay loop>
         <source src="/music.mp3" type="audio/mp3" />
         Your browser does not support the audio element.
