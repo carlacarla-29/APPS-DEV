@@ -1,4 +1,4 @@
-// src/pages/BrowseProducts.jsx
+
 import { useState } from "react";
 import useFetchProducts from "../hooks/useFetchProducts";
 import ProductCard from "../components/products/ProductCard";
@@ -6,42 +6,37 @@ import ProductCard from "../components/products/ProductCard";
 export default function BrowseProducts() {
   const { products, loading, error } = useFetchProducts();
 
-  // Local states
+
   const [searchInput, setSearchInput] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [sort, setSort] = useState("default");
   const [category, setCategory] = useState("all");
   const [priceRange, setPriceRange] = useState([0, 2000]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8; // number of products per page
-
+  const itemsPerPage = 8; 
   if (loading) return <p>Loading products...</p>;
   if (error) return <p>Error: {error}</p>;
 
-  // Handle search (Enter key)
+
   const handleSearchKeyDown = (e) => {
     if (e.key === "Enter") {
       setSearchQuery(searchInput.trim());
-      setCurrentPage(1); // reset to first page when searching
+      setCurrentPage(1); 
     }
   };
 
-  // 1. Search filter
   let filtered = products.filter((p) =>
     p.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // 2. Category filter
   if (category !== "all") {
     filtered = filtered.filter((p) => p.category === category);
   }
 
-  // 3. Price range filter
   filtered = filtered.filter(
     (p) => p.price >= priceRange[0] && p.price <= priceRange[1]
   );
 
-  // 4. Sorting
   if (sort === "az") {
     filtered.sort((a, b) => a.title.localeCompare(b.title));
   } else if (sort === "priceLowHigh") {
@@ -52,7 +47,6 @@ export default function BrowseProducts() {
     filtered.sort((a, b) => b.rating - a.rating);
   }
 
-  // --- Pagination logic ---
   const totalPages = Math.ceil(filtered.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedProducts = filtered.slice(

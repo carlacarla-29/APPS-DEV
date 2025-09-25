@@ -26,7 +26,7 @@ export default function Checkout() {
       <h2 className="text-xl font-bold mb-4">Checkout</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Name */}
+
         <div>
           <label className="block mb-1 font-medium">Full Name</label>
           <input
@@ -39,7 +39,7 @@ export default function Checkout() {
           />
         </div>
 
-        {/* Email */}
+
         <div>
           <label className="block mb-1 font-medium">Email Address</label>
           <input
@@ -52,7 +52,6 @@ export default function Checkout() {
           />
         </div>
 
-        {/* Address */}
         <div>
           <label className="block mb-1 font-medium">Shipping Address</label>
           <textarea
@@ -64,7 +63,6 @@ export default function Checkout() {
           ></textarea>
         </div>
 
-        {/* Payment Method */}
         <div>
           <label className="block mb-1 font-medium">Payment Method</label>
           <div className="space-y-2">
