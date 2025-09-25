@@ -30,7 +30,7 @@ export default function Home() {
           Welcome to RuenzCarlSmith (RCS) 2025!
         </h1>
         <p className="text-gray-200 text-lg md:text-xl mb-6 max-w-2xl italic drop-shadow">
-          Your one-stop shop for everything you need, all in one place.
+          Building Customer Trust, Creating Excellent Experiences, Focusing on Customer's Needs.
         </p>
         <button
           onClick={() => navigate("/products")}
